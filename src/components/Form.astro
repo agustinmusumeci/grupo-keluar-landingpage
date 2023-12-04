@@ -1,0 +1,55 @@
+---
+import SecondaryTitle from "./SecondaryTitle.astro";
+---
+<section class="container mt-28">
+
+    <SecondaryTitle title="Construí tu sueño" customStyles="sm-title "/>
+    <p class="xl-content mt-7 whitespace-normal lg:whitespace-pre">Ponete en contacto con nuestro 
+equipo y realizaz todas tus consultas</p>
+    <form action="contact" class="mt-16 grid grid-cols-1 grid-flow-row gap-7 md:grid-cols-2">
+        <p class="grid">
+            <label for="" class="sm-title mb-2">Nombre</label>
+            <input type="text" required class="p-3 bg-gray-50">
+        </p>
+
+        <p class="grid">
+            <label for="" class="sm-title mb-2">Apellido</label>
+            <input type="text" required class="p-3 bg-gray-50">
+        </p>
+
+        <p class="grid">
+            <label for="" class="sm-title mb-2">Fecha de Nacimiento</label>
+            <input type="text" required class="p-3 bg-gray-50">
+        </p>
+
+        <p class="grid">
+            <label for="" class="sm-title mb-2">DNI</label>
+            <input type="text" required class="p-3 bg-gray-50">
+        </p>
+
+        <p class="grid">
+            <label for="" class="sm-title mb-2">Télefono</label>
+            <input type="tel" required class="p-3 bg-gray-50">
+        </p>
+
+        <p class="grid">
+            <label for="" class="sm-title mb-2">Email</label>
+            <input type="email" required class="p-3 bg-gray-50">
+        </p>
+
+        <p class="grid col-span-1 md:col-span-2">
+            <label for="" class="sm-title mb-2">Mensaje</label>
+            <textarea class="resize-none bg-gray-50" spellcheck="true" wrap="hard" form="contact" autocomplete="off" rows="6"></textarea>
+        </p>
+
+        <p>
+            <input type="checkbox" name="" id="">
+            <label for="" class="sm-title">Aceptar términos y condiciones</label>
+        </p>
+
+        <button type="submit" class="sm-title w-40 p-3 bg-keluar text-white place-self-left md:place-self-end">
+            Enviar
+        </button>
+
+    </form>
+</section>

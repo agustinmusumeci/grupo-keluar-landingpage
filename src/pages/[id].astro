@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Presentation from '../components/Presentation.astro';
+import About from '../components/About.astro';
+import ExpandedCard from "../components/ExpandedProject.astro";
+import Stages from '../components/Stages.astro';
+import Stats from '../components/Stats.astro';
+import Form from '../components/Form.astro';
+import Trust from '../components/Trust.astro';
+
+const { id } = Astro.params
+
+import cards from "../../public/mocks/cards.json";
+
+const card = cards.filter( (card) => card.id == id)[0];
+
+export function getStaticPaths() {
+    return [
+        {params: {id: "1"}},
+        {params: {id: "2"}},
+        {params: {id: "3"}},
+        {params: {id: "4"}},
+        {params: {id: "5"}},
+        {params: {id: "6"}},
+        {params: {id: "7"}},
+        {params: {id: "8"}},
+    ];
+}
+---
+
+<Layout title="KELUAR | Constructora SteelFrame">
+	<Presentation />
+    <About/>
+
+    <ExpandedCard data={card}/>
+
+    <Stages /> 
+    <Stats />
+    <!-- Missing JS island customization game -->
+    <Form />
+    <Trust />
+</Layout>

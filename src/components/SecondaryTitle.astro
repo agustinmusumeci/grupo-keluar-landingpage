@@ -1,0 +1,14 @@
+---
+interface Props {
+    title: string,
+    customStyles: string;
+}
+
+const { title, customStyles } = Astro.props
+
+const style = `${customStyles}`
+---
+
+<h3 class={style}>
+    {title}
+</h3>

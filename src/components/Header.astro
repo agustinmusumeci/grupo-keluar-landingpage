@@ -1,0 +1,23 @@
+---
+interface Props {
+    logo: string;
+}
+
+const { logo } = Astro.props
+---
+
+<header class="container">
+    <nav class="h-20 flex flex-wrap justify-between uppercase text-sm">
+        <pciture class="grid place-content-center">
+            <img src={logo} alt="Keluar Isotipo" class="h-8">
+        </pciture>
+        <ul class="flex flex-wrap items-center gap-5">
+            <li class="hover"><a href="#">Institucional</a></li>
+            <li class="hover"><a href="#">Steelframe</a></li>
+            <li class="hover"><a href="#">Proyectos</a></li>
+            <li class="hover"><a href="#">Etapas</a></li>
+            <li class="hover"><a href="#">Sistemas</a></li>
+            <li class="hover"><a href="#">Contacto</a></li>
+        </ul>
+    </nav>
+</header>

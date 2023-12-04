@@ -1,0 +1,19 @@
+---
+const { data, url } = Astro.props;
+---
+
+        <article class="bg-gray-400 transition-all duration-300" id={data.id}>
+                <picture class="relative">
+                    <img src=`${data.img}` alt="Icon" class="min-h-[26rem]"/>
+                    <a href={url} class="w-[3.5rem] h-[3.5rem] absolute right-0 bottom-0 text-5xl text-center font-keluar_extralight bg-white leading-[3.5rem]" >
+                        +
+                    </a>
+                </picture>
+                <h3 class="sm-title py-3 pt-6">
+                    {data.location}
+                </h3>
+                <p class="md-title uppercase font-keluar_medium">
+                    {data.title}
+                </p>
+        </article>
+

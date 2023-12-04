@@ -1,0 +1,12 @@
+---
+import MainTitle from "./MainTitle.astro";
+import Carrousel from "./Carrousel.astro";
+import cards from "../../public/mocks/cards.json";
+---
+<section class="container mt-28 relative" id="proyectos">
+    <MainTitle title="Proyectos" customStyles="pb-5 sm-title"/>
+    <p class="xl-content text-black -z-10">
+        Hemos elegido diferentes obras que finalizamos para despertar las ideas de tu casa ideal. Nosotros desarrollamos tú proyecto desde cero.
+    </p>
+    <Carrousel cards={cards}/>
+</section>

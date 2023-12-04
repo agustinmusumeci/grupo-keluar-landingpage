@@ -1,0 +1,17 @@
+---
+import DynamicCard from "./DynamicCard.astro";
+
+import cards from "../../public/mocks/cards.json";
+---
+        <div>
+            <aside class="carrousel snaps-inline mt-24 relative gap-0 min-[1126px]:gap-6" id="slider">
+                {cards.map((card) => 
+                        <DynamicCard data={card} url={`/${card.id}#ver-mas`}/>
+                ) 
+                }
+            </aside>
+            <div class="mt-16 flex gap-5" id="navigate-buttons">
+                <button class="w-10 h-10 bg-keluar text-white" onclick="slideLeft()">L</button>
+                <button class="w-10 h-10 bg-keluar text-white" onclick="slideRight()"">R</button>
+            </div>
+        </div>

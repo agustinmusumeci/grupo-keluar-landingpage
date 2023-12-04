@@ -1,0 +1,49 @@
+---
+import SecondaryTitle from './SecondaryTitle.astro';
+
+interface Props {
+    logo: string;
+}
+
+const { logo } = Astro.props
+---
+<footer class="pt-12 pb-28 bg-keluar text-white">
+    <div class="container flex flex-wrap justify-between gap-5">
+        <picture>
+            <img src={logo} alt="Keluar Isotipo" class="h-8">
+        </picture>
+        <aside class="pt-10 flex flex-wrap gap-5 sm:gap-20 md:pt-0">
+            <article class="flex flex-col gap-5">
+                <SecondaryTitle title="Contacto" customStyles="sm-title"/>
+                <ul class="sm-content uppercase">
+                    <li>+54 (351) 380 0005</li>
+                    <li>Info@grupokeluar.com</li>
+                    <li class="whitespace-pre">Av.Fuerza Aérea 
+Argentina 4174 
+Córdoba, Argentina</li>
+                    <li>CP - 5000</li>
+                </ul>
+            </article>
+    
+            <article class="flex flex-col gap-5">
+                <SecondaryTitle title="Mapa de sitio"  customStyles="sm-title"/>
+                <ul class="sm-content uppercase">
+                    <li><a href="#">Institucional</a></li>
+                    <li><a href="#">Steelframe</a></li>
+                    <li><a href="#">Proyectos</a></li>
+                    <li><a href="#">Etapas</a></li>
+                    <li><a href="#">Sistemas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </article>
+    
+            <article class="flex flex-col gap-5">
+                <SecondaryTitle title="Seguinos"  customStyles="sm-title"/>
+                <ul class="sm-content uppercase">
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </article>
+        </aside>
+    </div>
+</footer>

@@ -1,0 +1,150 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<ViewTransitions fallback='none'/>
+		<title>{title}</title>
+	</head>
+	<body class="">
+		<Header logo="/images/logos/keluar-logo.png"/>
+		<main class="transition-all duration-300">
+			<slot />
+		</main>
+		<Footer logo="/images/logos/keluar-logo.png"/>
+	</body>
+</html>
+
+<style is:global>
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	@font-face {
+    	font-family: "TT Firs Neue Regular";
+    	src: url("fonts/TTFirsNeue-Regular.otf");
+    	font-weight: normal;
+    	font-style: normal;
+    	font-display: swap;
+	}
+
+	@font-face {
+    	font-family: "TT Firs Neue Medium";
+    	src: url("fonts/TTFirsNeue-Medium.otf");
+    	font-weight: medium;
+    	font-style: normal;
+    	font-display: swap;
+	}
+
+	@font-face {
+    	font-family: "TT Firs Neue Light";
+    	src: url("fonts/TTFirsNeue-Light.otf");
+    	font-weight: light;
+    	font-style: normal;
+    	font-display: swap;
+	}
+
+	@font-face {
+    	font-family: "TT Firs Neue ExtraLight";
+    	src: url("fonts/TTFirsNeue-ExtraLight.otf");
+    	font-weight: lighter;
+    	font-style: normal;
+    	font-display: swap;
+	}
+
+	@font-face {
+    	font-family: "TT Firs Neue Bold";
+    	src: url("fonts/TTFirsNeue-Bold.otf");
+    	font-weight: bold;
+    	font-style: normal;
+    	font-display: swap;
+	}
+
+	.xl-title {
+    	@apply font-keluar_medium uppercase leading-[1.2] tracking-wide;
+		font-size: clamp(1.855rem, 1.458rem + 1.6937vw, 2.65rem);
+	}
+
+	.md-title {
+		font-size: clamp(1rem, 0.8253rem + 0.9587vw, 1.45rem);
+	}
+
+	.sm-title {
+		@apply uppercase;
+		font-size: clamp(0.56rem, 0.4402rem + 0.5113vw, 0.8rem);
+	}
+
+	.xl-content {
+		@apply font-bold uppercase leading-[1.25] tracking-wide;
+		font-size: clamp(1.715rem, 1.348rem + 1.5659vw, 2.45rem);
+	}
+
+	.md-content {		
+		@apply leading-[1.25];
+
+		font-size: clamp(0.98rem, 0.7703rem + 0.8948vw, 1.4rem);
+	}
+
+	.sm-content {
+		@apply font-keluar_light text-sm;
+
+		font-size: clamp(0.6125rem, 0.4814rem + 0.5593vw, 0.875rem);
+	}
+
+	.hover {
+		@apply hover:underline decoration-keluar decoration-4 underline-offset-[32.5px];
+	}
+
+	.bottom-line {
+		@apply underline decoration-white/20  underline-offset-[30px]
+	}
+	
+	.carrousel {
+		@apply grid grid-flow-col overflow-x-hidden auto-cols-[100%] min-[1126px]:auto-cols-[32%] ;
+
+		overscroll-behavior-inline: contain;
+	}
+
+	.snaps-inline {
+		scroll-snap-type: x mandatory;
+	}
+
+	.snaps-inline > * {
+		scroll-snap-align: start;
+	}
+
+	.container {
+		@apply max-w-[90vw] mx-auto min-[1126px]:max-w-[1126px] ;
+		
+	}
+</style>
+
+<script is:inline>
+
+    // scroll hacia la izquierda
+    const slideLeft = () => {
+        let slider = document.getElementById("slider");
+        slider.scrollLeft = slider.scrollLeft - 500;
+    };
+
+    // scroll hacia la derecha
+    const slideRight = () => {
+        let slider = document.getElementById("slider");
+        slider.scrollLeft = slider.scrollLeft + 500;
+    };
+</script>

@@ -1,0 +1,31 @@
+---
+import DynamicCard from "./DynamicCard.astro";
+import SecondaryTitle from "./SecondaryTitle.astro";
+
+const { data } = Astro.props
+const title = `Obra | año ${data.year}`
+const info = `Steelframe\n${data.title} \n${data.location}`
+console.log(data.year)
+---
+
+<section class="container mt-28 pb-[104px]" id="ver-mas">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-52">
+        <aside class="mb-10 lg:mb-24">
+            <SecondaryTitle title={title} customStyles="pb-5 sm-title"/>
+            <p class="xl-content text-black -z-10 whitespace-pre-line">
+            {info}
+            </p>
+        </aside>
+        <aside class="mb-10 lg:mb-0">
+            <ul class="grid divide-y divide-black/30 sm-title uppercase lg:mx-0">
+                <li class="py-2">- {data.im2} M2 Cubiertos</li>
+                <li class="py-2">- {data.om2} M2 Semicubiertos</li>
+                <li class="py-2">- {data.rooms} Habitaciones</li>
+                <li class="py-2">- {data.baths} Baños</li>
+                <li class="py-2">- {data.facilities}</li>
+                <li class="py-2">- {data.garage ? "Cochera" : "Sin cochera"}</li>
+            </ul>
+        </aside>
+    </div>
+    <DynamicCard data={data} url="/#proyectos"/>
+</section>
