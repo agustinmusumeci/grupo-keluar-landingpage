@@ -13,7 +13,7 @@ const { title, content, customTitleStyles, customContentStyles } = Astro.props
 
 const TitleStyles = `py-4 pt-8  ${customTitleStyles}`
 ---
-<article class="bg-gray-300 sm:h-[15rem] min-[1126px]:max-h-56">
+<article class="sm:h-[15rem] min-[1126px]:max-h-96">
     <slot name="image"> Imagen </slot>
     <SecondaryTitle title={title} customStyles={TitleStyles}/>
     <p class={customContentStyles}>

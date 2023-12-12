@@ -1,5 +1,5 @@
 [
-    { "title": "Casa Verónica", "location": "Buenos Aires", "img": "", "id": "1", "rooms":"2", "baths":"2", "im2":"141", "om2":"52", "year":"2022", "facilities":"Living Comedor Cocina Quincho", "garage":true},
-    { "title": "Casa Villa Giardino", "location": "Córdoba", "img": "", "id": "2", "rooms":"2", "baths":"2", "im2":"141", "om2":"52",  "year":"2023", "facilities":"Living Comedor Cocina", "garage":true },
-    { "title": "Casa Funes", "location": "Santa Fe", "img": "", "id": "3", "rooms":"2", "baths":"2", "im2":"141", "om2":"52", "year":"2024", "facilities":"Living-Comedor Cocina", "garage":false }
+    { "title": "Casa Verónica", "location": "Buenos Aires", "img": "", "id": "1", "rooms":"2", "baths":"2", "im2":"141", "om2":"52", "year":"2022", "facilities":"Living Comedor Cocina Quincho", "garage":true, "images":["","",""]},
+    { "title": "Casa Villa Giardino", "location": "Córdoba", "img": "", "id": "2", "rooms":"2", "baths":"2", "im2":"141", "om2":"52",  "year":"2023", "facilities":"Living Comedor Cocina", "garage":true, "images":["","",""] },
+    { "title": "Casa Funes", "location": "Santa Fe", "img": "", "id": "3", "rooms":"2", "baths":"2", "im2":"141", "om2":"52", "year":"2024", "facilities":"Living-Comedor Cocina", "garage":false, "images":["","",""] }
 ]

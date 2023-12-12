@@ -1,16 +1,19 @@
 ---
-import DynamicCard from "./DynamicCard.astro";
+import ExpandedProjectsCard from "./ExpandedProjectsCard.astro";
 import SecondaryTitle from "./SecondaryTitle.astro";
+import Carrousel from "./Carrousel.astro";
 
 const { data } = Astro.props
 const title = `Obra | año ${data.year}`
 const info = `Steelframe\n${data.title} \n${data.location}`
-console.log(data.year)
+
+const url = "/#proyectos"
+const images = data.images
 ---
 
-<section class="container mt-28 pb-[104px]" id="ver-mas">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-52">
-        <aside class="mb-10 lg:mb-24">
+<section class="container mt-28" id="ver-mas">
+    <article class="grid grid-cols-1 lg:grid-cols-2 gap-0 lg:gap-52">
+        <aside class="mb-10 lg:mb-12">
             <SecondaryTitle title={title} customStyles="pb-5 sm-title"/>
             <p class="xl-content text-black -z-10 whitespace-pre-line">
             {info}
@@ -26,6 +29,11 @@ console.log(data.year)
                 <li class="py-2">- {data.garage ? "Cochera" : "Sin cochera"}</li>
             </ul>
         </aside>
-    </div>
-    <DynamicCard data={data} url="/#proyectos"/>
+    </article>
+    <Carrousel>
+        {images.map((image) => (
+            <ExpandedProjectsCard image={image} url={url} data={data}/>
+        ))}
+        <!-- <ProjectsCard data={data} url="/#proyectos"/> -->
+    </Carrousel>
 </section>

@@ -25,7 +25,7 @@ const { title } = Astro.props;
 		<main class="transition-all duration-300">
 			<slot />
 		</main>
-		<Footer logo="/images/logos/keluar-logo.png"/>
+		<Footer logo="/images/logos/keluar-logo-blanco.svg"/>
 	</body>
 </html>
 
@@ -130,7 +130,40 @@ const { title } = Astro.props;
 
 	.container {
 		@apply max-w-[90vw] mx-auto min-[1126px]:max-w-[1126px] ;
-		
+	}
+
+	.title {
+		height: 100%;
+		cursor: pointer;
+		transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1)
+		}
+
+	.content {
+		opacity: 0;
+		position: absolute;
+		/* width: inherit; */
+		padding-top: 1rem;
+		height: 100%;
+		display: flex;
+		pointer-events: none;
+  		transform: translateY(-96%);
+  		transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+	}
+
+	.title:hover .content {
+		transform: translateX(0);
+	}
+
+	.titles:hover > .title:not(:hover) {
+		opacity: 0;
+	}
+
+	.title:hover {
+  		transform: translateY(-45%);
+	}
+
+	.title:hover > .content {
+		opacity: 100%;
 	}
 </style>
 

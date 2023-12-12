@@ -6,18 +6,18 @@ interface Props {
 const { logo } = Astro.props
 ---
 
-<header class="container">
+<header class="container relative">
     <nav class="h-20 flex flex-wrap justify-between uppercase text-sm">
-        <pciture class="grid place-content-center">
+        <picture class="grid place-content-center absolute top-6 left-0 md:relative md:top-auto md:left-auto">
             <img src={logo} alt="Keluar Isotipo" class="h-8">
-        </pciture>
-        <ul class="flex flex-wrap items-center gap-5">
-            <li class="hover"><a href="#">Institucional</a></li>
-            <li class="hover"><a href="#">Steelframe</a></li>
-            <li class="hover"><a href="#">Proyectos</a></li>
-            <li class="hover"><a href="#">Etapas</a></li>
-            <li class="hover"><a href="#">Sistemas</a></li>
-            <li class="hover"><a href="#">Contacto</a></li>
+        </picture>
+        <ul class="flex flex-wrap flex-col items-start gap-5 md:flex-row md:items-center">
+            <li class="hover hover:text-keluar/90"><a href="#">Institucional</a></li>
+            <li class="hover hover:text-keluar/90"><a href="#">Steelframe</a></li>
+            <li class="hover hover:text-keluar/90"><a href="#">Proyectos</a></li>
+            <li class="hover hover:text-keluar/90"><a href="#">Etapas</a></li>
+            <li class="hover hover:text-keluar/90"><a href="#">Sistemas</a></li>
+            <li class="hover hover:text-keluar/90"><a href="#">Contacto</a></li>
         </ul>
     </nav>
 </header>
