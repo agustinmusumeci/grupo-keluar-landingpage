@@ -16,9 +16,6 @@ export default {
 		colors : {
 			keluar: "#214433"
 		},
-		backgroundImage: {
-			"green-keluar": "url('./public/images/bg-green.png')"
-		},
 		backgroundSize: {
 			"100" : "100%"
 		}

@@ -1,0 +1,96 @@
+---
+import SecondaryTitle from "./SecondaryTitle.astro";
+---
+<section class="mt-10 section novi-background bg-cover parallax-scene-js container" id="sistemaSteelFrame">
+
+    <article class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-52">
+        <aside>
+            <SecondaryTitle title="Steelframe" customStyles="sm-title"/>
+            <p class="xl-content -mt-5 text-black whitespace-pre-line">
+                Diseña tu casa ideal 
+                y todas las posibilidades 
+                en base a tus ideas.
+            </p>
+        </aside>
+        
+        <aside>
+            <!-- revestimiento -->
+            <div class="wow fadeInRight div-revestimientos" data-wow-delay=".05s">
+                <article class="">
+                    <p class="md-content whitespace-pre">Prueba distintos revestimientos y 
+colores asi tu futuro hogar 
+con todas sus terminaciones.</p>
+                    <h6 class="sm-title mt-7 mb-3">revestimiento</h6>
+                    <ul class="counter-classic-text contenedor grid divide-y divide-black/30 sm-title uppercase lg:mx-0">   
+    
+                        <li>
+                            <input checked class="ocultar" id="revestimiento4" name="revestimientos" type="radio" value="revoque"/>
+                            <label class="etiqueta revoque" for="revestimiento4"><strong>Elastomérico</strong><br><span class="hidden">Flexible y de excelente resistencia a la intemperie, forma una barrera impermeabilizante, evita formación de hongos y bacterias, gran dureza.</span></label>
+                        </li>
+
+                        <li class="py-2">
+                            <input  class="ocultar" id="revestimiento1" name="revestimientos" type="radio" value="piedra" />
+                            <label class="etiqueta piedra" for="revestimiento1"><strong>Simil Piedra</strong><br><span class="hidden">Combina a la perfección el glamour, el toque ecológico y el cuidado del medio ambiente.</span></label>
+                        </li>
+    
+                        <li class="py-2">
+                            <input class="ocultar" id="revestimiento2" name="revestimientos" type="radio" value="chapa"/>
+                            <label class="etiqueta chapa" for="revestimiento2"><strong>Chapas</strong> <span class="hidden">Resistente, liviano y reciclable, el acero está ligado al desarrollo de la vida moderna.</span></label>
+                        </li>
+    
+                        <li class="py-2">
+                            <input class="ocultar" id="revestimiento3" name="revestimientos" type="radio" value="madera"/>
+                            <label class="etiqueta madera" for="revestimiento3"><strong>Siding</strong> <span class="hidden">Compuesto por tablas de cemento con textura de madera. Una respuesta decorativa y estética donde la durabilidad y el diseño son los valores más relevante.</span></label>
+                        </li>
+
+                    </ul>
+                </article>
+            </div>
+    
+            <div class="col-12 mb-2 wow fadeInRight " data-wow-delay=".1s">
+                <article class="counter-classic">
+                    <div class="counter-classic-header">
+                        <h6 class="sm-title mt-5">Color</h6>
+                    </div>
+                    <div class="counter-classic-text div-colores mt-2">                      
+                            
+                        <input type="radio" id="color1" name="colores" value="blanco" checked>
+                        <label class="etiqueta-color w-10 " for="color1"><span class="cBlanco"></label>
+    
+                        <input type="radio" id="color2" name="colores" value="beige">
+                        <label class="etiqueta-color" for="color2"><span class="cBeige"></label>
+    
+                        <input type="radio" id="color3" name="colores" value="bordo">
+                        <label class="etiqueta-color" for="color3"><span class="cBordo"></label>
+    
+                        <input type="radio" id="color4" name="colores" value="azul">
+                        <label class="etiqueta-color" for="color4"><span class="cAzul"></label>
+                            
+                    </div>
+                </article>
+            </div>
+        </div>
+        </aside>
+    </article>
+
+        
+    <div class="wow blurIn w-[100%] mt-14">
+        <div class="contenedor-imagenes relative bg-red-500">
+            <div id="cargador" class="cargador">
+                <div class="cargador-circulo spinner-grow"></div>
+            </div>
+                        
+            <img loading="lazy" class="render absolute w-full h-full" id="render" src="./images/juego/blanco-revoque-dia.jpg" alt="Blanca Revoque Dia" />
+            <img loading="lazy" class="imagen2 render2 w-full h-full" id="render2" src="./images/juego/blanco-revoque-dia.jpg" alt="Blanca Revoque Dia"/>
+            <a id="lupa" class="lupa project-mary-link mdi mdi-magnify bg-white w-14 h-14 absolute bottom-0 right-0 flex justify-center items-center" data-lightgallery="item" href="./images/juego/blanco-revoque-dia.jpg">Lupa</a>
+        </div>          
+    </div>
+
+    <div class="layer-wrap layer-2">
+        <div class="layer" data-depth="0.4"><img loading="lazy" src="" alt="" /></div>
+    </div>        
+</section>
+
+<script is:inline>
+
+</script>

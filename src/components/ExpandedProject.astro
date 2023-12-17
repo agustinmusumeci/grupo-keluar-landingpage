@@ -7,7 +7,7 @@ const { data } = Astro.props
 const title = `Obra | año ${data.year}`
 const info = `Steelframe\n${data.title} \n${data.location}`
 
-const url = "/#proyectos"
+const url = "../#proyectos"
 const images = data.images
 ---
 
@@ -34,6 +34,5 @@ const images = data.images
         {images.map((image) => (
             <ExpandedProjectsCard image={image} url={url} data={data}/>
         ))}
-        <!-- <ProjectsCard data={data} url="/#proyectos"/> -->
     </Carrousel>
 </section>

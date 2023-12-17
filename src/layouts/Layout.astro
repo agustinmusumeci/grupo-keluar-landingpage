@@ -17,15 +17,30 @@ const { title } = Astro.props;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<ViewTransitions fallback='none'/>
+		<!-- <meta name="msapplication-TileImage" content="https://keluar.com.ar/images/icono/apple-touch-icon.png">
+		<meta name="theme-color" content="#214433">
+		<meta property="og:title" content="KELUAR | Constructora SteelFrame">
+		<meta property="og:image" content="https://keluar.com.ar/images/logo/og-logo-nuevo.jpg">
+		<meta property="og:url" content="https://keluar.com.ar">
+		<meta property="og:type" content="website">
+		<meta property="og:site_name" content="KELUAR | Constructora SteelFrame">
+		<meta property="og:description" content="Constructora SteelFrame en Córdoba">
+		<link rel="apple-touch-icon" sizes="180x180" href="https://keluar.com.ar/images/icono/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://keluar.com.ar/images/icono/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://keluar.com.ar/images/icono/favicon-16x16.png">
+		<link rel="manifest" href="https://keluar.com.ar/images/icono/site.webmanifest"> -->
+				
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
-	<body class="">
-		<Header logo="/images/logos/keluar-logo.png"/>
+	<body>
+		<Header logo='./images/logos/keluar-logo.png'/>
 		<main class="transition-all duration-300">
 			<slot />
 		</main>
-		<Footer logo="/images/logos/keluar-logo-blanco.svg"/>
+		<Footer logo="./images/logos/keluar-logo-blanco.svg"/>
+
+		
 	</body>
 </html>
 
@@ -37,7 +52,7 @@ const { title } = Astro.props;
 
 	@font-face {
     	font-family: "TT Firs Neue Regular";
-    	src: url("fonts/TTFirsNeue-Regular.otf");
+    	src: url("../fonts/TTFirsNeue-Regular.otf");
     	font-weight: normal;
     	font-style: normal;
     	font-display: swap;
@@ -45,7 +60,7 @@ const { title } = Astro.props;
 
 	@font-face {
     	font-family: "TT Firs Neue Medium";
-    	src: url("fonts/TTFirsNeue-Medium.otf");
+    	src: url("../fonts/TTFirsNeue-Medium.otf");
     	font-weight: medium;
     	font-style: normal;
     	font-display: swap;
@@ -53,7 +68,7 @@ const { title } = Astro.props;
 
 	@font-face {
     	font-family: "TT Firs Neue Light";
-    	src: url("fonts/TTFirsNeue-Light.otf");
+    	src: url("../fonts/TTFirsNeue-Light.otf");
     	font-weight: light;
     	font-style: normal;
     	font-display: swap;
@@ -61,7 +76,7 @@ const { title } = Astro.props;
 
 	@font-face {
     	font-family: "TT Firs Neue ExtraLight";
-    	src: url("fonts/TTFirsNeue-ExtraLight.otf");
+    	src: url("../fonts/TTFirsNeue-ExtraLight.otf");
     	font-weight: lighter;
     	font-style: normal;
     	font-display: swap;
@@ -69,7 +84,7 @@ const { title } = Astro.props;
 
 	@font-face {
     	font-family: "TT Firs Neue Bold";
-    	src: url("fonts/TTFirsNeue-Bold.otf");
+    	src: url("../fonts/TTFirsNeue-Bold.otf");
     	font-weight: bold;
     	font-style: normal;
     	font-display: swap;
@@ -106,8 +121,23 @@ const { title } = Astro.props;
 		font-size: clamp(0.6125rem, 0.4814rem + 0.5593vw, 0.875rem);
 	}
 
+	/* evita el glow azul al ser clickeado un elemento */
+	.noSelect {
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+
+	.noSelect:focus {
+		outline: none !important;
+	}
+
 	.hover {
-		@apply hover:underline decoration-keluar decoration-4 underline-offset-[32.5px];
+		@apply hover:underline decoration-keluar decoration-2 underline-offset-[5px] min-[900px]:decoration-4 min-[900px]:underline-offset-[32.5px] ;
 	}
 
 	.bottom-line {
@@ -129,6 +159,10 @@ const { title } = Astro.props;
 	}
 
 	.container {
+		@apply max-w-[90vw] mx-auto min-[1126px]:max-w-[1126px] ;
+	}
+
+	.header-container {
 		@apply max-w-[90vw] mx-auto min-[1126px]:max-w-[1126px] ;
 	}
 
@@ -168,16 +202,108 @@ const { title } = Astro.props;
 </style>
 
 <script is:inline>
+    // juego de diseño
+	function cambiarImagen() {
+		
+		// selecciono las imagenes a cambiar
+		const img = document.getElementById("render2");
+		const img2 = document.getElementById("render");
+		const lupa = document.getElementById("lupa");
+		const cargador = document.getElementById("cargador");
 
-    // scroll hacia la izquierda
-    const slideLeft = () => {
-        let slider = document.getElementById("slider");
-        slider.scrollLeft = slider.scrollLeft - 500;
-    };
+		img.setAttribute("alt", nuevaImagen.alt);
+		img2.setAttribute("alt", nuevaImagen.alt);
+		lupa.setAttribute("alt", "Mas Información");
+		lupa.setAttribute("href", nuevaImagen.src);
+		cargador.style.display = "none";
 
-    // scroll hacia la derecha
-    const slideRight = () => {
-        let slider = document.getElementById("slider");
-        slider.scrollLeft = slider.scrollLeft + 500;
-    };
+		// efecto de desvanecido
+		img.src = nuevaImagen.src;
+		img.style.opacity = "0";
+		opacidad = 0.1;
+
+		var intervalo = setInterval(function() {   
+		opacidad += 0.1;
+		img.style.opacity = opacidad;
+
+		if (img.style.opacity == 1) {
+      	//console.log("fin intervalo");
+			clearInterval(intervalo);
+			img2.src = img.src;      
+			}
+		}, 100);
+	}
+
+	function onCambio(e) {
+
+		let t = e.target;
+
+		const REVESTIMIENTO = {
+			chapa: "Chapas Acanaladas",
+			revoque: "Revoque ElastomÃ©rico",
+			piedra: "Simil Priedra",
+			siding: "Siding Cedral"
+		}
+
+		switch (t.name) {
+			case "colores":
+			case "revestimientos":
+
+			// selecciono los input checkbox
+			cargador.style.display = "flex";
+			let ter = document.querySelector('input[name="revestimientos"]:checked');
+			let col = document.querySelector('input[name="colores"]:checked');
+
+			// cambio su alt
+			let alt = REVESTIMIENTO[ter.value] + " | Color: " + col.value;
+
+			// cambio su ruta
+			let rutaNuevaImagen = col.value + "-" + ter.value + "-" + "dia.jpg";
+      		//console.log(rutaNuevaImagen);
+
+			// seteo la imagen con la ruta y el alt
+			nuevaImagen = new Image();
+			nuevaImagen.onload = cambiarImagen;
+			nuevaImagen.src = "images/juego/"+rutaNuevaImagen;
+			nuevaImagen.alt = alt;
+      		//cambiarImagen(nuevaImagen);
+
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	window.addEventListener("change", onCambio);
+
+	// desplegar navbar hamburgesa en movil
+	const toggleHamb = () => {
+		
+		const hamb = document.querySelector(".hamburger")
+		const nav = document.querySelector(".nav")
+		const bg = document.querySelector(".bg")
+
+		if (hamb.name == "menu") {
+			hamb.name = "close";
+			nav.classList.remove("opacity-0");
+			bg.classList.remove("-translate-y-full");
+		} else {
+			hamb.name = "menu";
+			nav.classList.add("opacity-0")
+			bg.classList.add("-translate-y-full")
+		}
+	}
+
+	// scroll hacia la izquierda en carrousel
+	const slideLeft = () => {
+		let slider = document.getElementById("slider");
+		slider.scrollLeft = slider.scrollLeft - 500;
+	};
+
+	// scroll hacia la derecha en carrousel
+	const slideRight = () => {
+		let slider = document.getElementById("slider");
+		slider.scrollLeft = slider.scrollLeft + 500;
+	};
 </script>

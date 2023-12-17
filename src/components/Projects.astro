@@ -2,7 +2,7 @@
 import MainTitle from "./MainTitle.astro";
 import Carrousel from "./Carrousel.astro";
 import ProjectsCard from "./ProjectsCard.astro";
-import cards from "../../public/mocks/cards.json";
+import cards from "./../../public/mocks/cards.json";
 ---
 <section class="container mt-28 relative" id="proyectos">
     <MainTitle title="Proyectos" customStyles="pb-5 sm-title"/>
@@ -11,7 +11,7 @@ import cards from "../../public/mocks/cards.json";
     </p>
     <Carrousel data={cards}>
         {cards.map((card) => 
-            <ProjectsCard data={card} url={`/${card.id}#ver-mas`}/>
+            <ProjectsCard data={card} url={`./${card.id}#ver-mas`}/>
         ) 
         }
     </Carrousel>
